@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flexbox gap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    label, input {
+      cursor: pointer;
+    }
+
+    .parent {
+      display: flex;
+      max-width: 400px;
+      flex-wrap: wrap;
+      padding: 32px;
+      border: 1px solid blue;
+      justify-content: center;
+    }
+
+    .gap {
+      gap: 16px;
+    }
+
+    .child {
+      width: 150px;
+      padding: 32px;
+      border: 2px solid red;
+    }
+  </style>
+  <script type="module">
+    const gap = document.querySelector("#gap");
+    const container = document.querySelector(".parent");
+
+    gap.addEventListener("change", () => {
+      container.classList.toggle("gap", gap.checked);
+    });
+  </script>
+</head>
+<body>
+<main>
+  <h1>Flexbox gap</h1>
+  <label for="gap">Gap <input id="gap" type="checkbox"></label>
+  <br><br>
+  <article class="parent">
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+    <div class="child">Child 3</div>
+    <div class="child">Child 4</div>
+  </article>
+</main>
+</body>
+</html>
